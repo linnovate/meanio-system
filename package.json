@@ -1,0 +1,19 @@
+{
+  "name": "meanio-system",
+  "version": "0.1.0",
+  "description": "System package for MEAN.io starter bundle",
+  "author": {
+    "name": "Linnovate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rjVapes/meanio-system.git"
+  },  
+  "mean": "0.5.x",
+  "engines": {
+    "node": "4.x",
+    "npm": "3.x"
+  },
+  "dependencies": {},
+  "license": "MIT"
+}
