@@ -9,11 +9,13 @@
     "type": "git",
     "url": "https://github.com/rjVapes/meanio-system.git"
   },  
-  "mean": "0.5.x",
+  "mean": "0.6.x",
   "engines": {
     "node": "4.x",
     "npm": "3.x"
   },
-  "dependencies": {},
+  "dependencies": {
+    "serve-favicon": "latest"
+  },
   "license": "MIT"
 }
