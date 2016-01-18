@@ -1,7 +1,7 @@
 {
   "name": "system",
-  "version": "0.1.1",
-  "mean": "0.5.x",
+  "version": "0.1.2",
+  "mean": "0.6.x",
   "dependencies": {
   }
 }
