@@ -3,6 +3,7 @@
 angular.module('mean-factory-interceptor', [])
   .factory('httpInterceptor', ['$q', '$location', '$meanConfig', '$cookies',
     function($q, $location, $meanConfig, $cookies) {
+
       return {
         'response': function(response) {
 
@@ -19,8 +20,11 @@ angular.module('mean-factory-interceptor', [])
 
             // This is to set the cookie so that we can redirect back to the proper urL
             $cookies.put('redirect', $location.path());
+
             $location.url($meanConfig.loginPage);
+
             return $q.reject(rejection);
+
           }
           return $q.reject(rejection);
         }
