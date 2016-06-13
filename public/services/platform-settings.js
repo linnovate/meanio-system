@@ -2,7 +2,7 @@ angular.module('mean.platformsettings').factory('PlatformSetting', ['$rootScope'
   function($rootScope) {
 
       function getPlatformSettings() {
-        this.config = {};
+        this.platformSettings = {};
 
         var self = this;
 
