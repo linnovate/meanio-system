@@ -8,6 +8,8 @@ angular.module('mean-factory-interceptor', [])
         'response': function(response) {
 
           if (response.status === 401) {
+            console.log('response 401', response);
+            console.log('redirecting to loginPage', $meanConfig.loginPage);
             $location.url($meanConfig.loginPage);
             return $q.reject(response);
           }
@@ -17,10 +19,12 @@ angular.module('mean-factory-interceptor', [])
         'responseError': function(rejection) {
 
           if (rejection.status === 401) {
+            console.log('responseError 401', rejection);
 
             // This is to set the cookie so that we can redirect back to the proper urL
+            console.log('droppin cookies for login redirect', $location.path());
             $cookies.put('redirect', $location.path());
-
+            console.log('redirecting to loginPage', $meanConfig.loginPage);
             $location.url($meanConfig.loginPage);
 
             return $q.reject(rejection);
