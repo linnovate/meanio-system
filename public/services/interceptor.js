@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('mean-factory-interceptor', [])
-  .factory('httpInterceptor', ['$q', '$location', '$meanConfig', '$cookies', 'PlatformSetting',
-    function($q, $location, $meanConfig, $cookies, PlatformSetting) {
+angular.module('mean-factory-interceptor', ['ngCookies'])
+  .factory('httpInterceptor', ['$q', '$location', '$meanConfig', '$cookies',
+    function($q, $location, $meanConfig, $cookies) {
 
       return {
         'response': function(response) {
