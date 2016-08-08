@@ -8,8 +8,8 @@ angular.module('mean-factory-interceptor', ['ngCookies'])
         'response': function(response) {
 
           if (response.status === 401) {
-            console.log('response 401', response);
-            console.log('redirecting to loginPage', $meanConfig.loginPage);
+            //console.log('response 401', response);
+            //console.log('redirecting to loginPage', $meanConfig.loginPage);
             $location.url($meanConfig.loginPage);
             return $q.reject(response);
           }
@@ -22,10 +22,17 @@ angular.module('mean-factory-interceptor', ['ngCookies'])
             console.log('responseError 401', rejection);
 
             // This is to set the cookie so that we can redirect back to the proper urL
-            console.log('droppin cookies for login redirect', $location.path());
-            $cookies.put('redirect', $location.path());
-            console.log('redirecting to loginPage', $meanConfig.loginPage);
-            $location.url($meanConfig.loginPage);
+
+            if(rejection.config.url !== '/api/login') {
+
+              //console.log('droppin cookies for login redirect', $location.path());
+              $cookies.put('redirect', $location.path());
+              //console.log('redirecting to loginPage', $meanConfig.loginPage);
+
+            } else {
+              $location.url($meanConfig.loginPage);
+            }
+
 
             return $q.reject(rejection);
 

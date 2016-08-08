@@ -1,22 +1,86 @@
 {
-  "name": "meanio-system",
-  "version": "0.1.3",
-  "description": "System package for MEAN.io starter bundle",
+  "_args": [
+    [
+      "meanio-system@git://github.com/ideawake/meanio-system.git#master",
+      "/Users/phpfreak/Crowds.io/crowds-prediction-market"
+    ]
+  ],
+  "_from": "git://github.com/ideawake/meanio-system.git#master",
+  "_id": "meanio-system@0.1.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/meanio-system",
+  "_phantomChildren": {},
+  "_requested": {
+    "hosted": {
+      "directUrl": "https://raw.githubusercontent.com/ideawake/meanio-system/master/package.json",
+      "gitUrl": "git://github.com/ideawake/meanio-system.git#master",
+      "httpsUrl": "git+https://github.com/ideawake/meanio-system.git#master",
+      "shortcut": "github:ideawake/meanio-system#master",
+      "ssh": "git@github.com:ideawake/meanio-system.git#master",
+      "sshUrl": "git+ssh://git@github.com/ideawake/meanio-system.git#master",
+      "type": "github"
+    },
+    "name": "meanio-system",
+    "raw": "meanio-system@git://github.com/ideawake/meanio-system.git#master",
+    "rawSpec": "git://github.com/ideawake/meanio-system.git#master",
+    "scope": null,
+    "spec": "git://github.com/ideawake/meanio-system.git#master",
+    "type": "hosted"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git://github.com/ideawake/meanio-system.git#0db01b1e3a56999a14e3d3d700fc6ecf581af3eb",
+  "_shasum": "6e9b3b199fa030902084da49bcdb5f9a2d7921ce",
+  "_shrinkwrap": null,
+  "_spec": "meanio-system@git://github.com/ideawake/meanio-system.git#master",
+  "_where": "/Users/phpfreak/Crowds.io/crowds-prediction-market",
   "author": {
     "name": "Linnovate"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rjVapes/meanio-system.git"
-  },  
-  "mean": "0.6.x",
-  "engines": {
-    "node": "4.x",
-    "npm": "3.x"
+  "bugs": {
+    "url": "https://github.com/rjVapes/meanio-system/issues"
   },
   "dependencies": {
     "meanio-circles": "^0.1.x",
     "serve-favicon": "latest"
   },
-  "license": "MIT"
+  "description": "System package for MEAN.io starter bundle",
+  "devDependencies": {},
+  "engines": {
+    "node": "4.x",
+    "npm": "3.x"
+  },
+  "gitHead": "0db01b1e3a56999a14e3d3d700fc6ecf581af3eb",
+  "homepage": "https://github.com/rjVapes/meanio-system#readme",
+  "license": "MIT",
+  "mean": "0.6.x",
+  "name": "meanio-system",
+  "optionalDependencies": {},
+  "readme": "README: system",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjVapes/meanio-system.git"
+  },
+  "version": "0.1.3",
+  "warnings": [
+    {
+      "code": "ENOTSUP",
+      "pkgid": "meanio-system@0.1.3",
+      "required": {
+        "node": "4.x",
+        "npm": "3.x"
+      }
+    },
+    {
+      "code": "ENOTSUP",
+      "pkgid": "meanio-system@0.1.3",
+      "required": {
+        "node": "4.x",
+        "npm": "3.x"
+      }
+    }
+  ]
 }
