@@ -17,7 +17,7 @@ module.exports = function(System, app, database) {
   });
 
   app.get('/api/get-public-config', function(req, res){
-    var config = mean.loadConfig();
+    var config = mean.getConfig();
 
     return res.send(config.public);
   });
