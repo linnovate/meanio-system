@@ -52,7 +52,7 @@ angular.module('mean-factory-interceptor', ['ngCookies'])
           return config;
         }
       };
-    });
+    })
   //Http Interceptor to check auth failures for XHR requests
   .config(['$httpProvider',
     function($httpProvider) {
