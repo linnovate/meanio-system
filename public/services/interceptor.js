@@ -45,7 +45,8 @@ angular.module('mean-factory-interceptor', ['ngCookies'])
   ]).factory('noCacheInterceptor', function () {
       return {
         request: function (config) {
-          if(config.method=='GET') {
+          // Don't cache GET reqs to /api/*, fix for IE
+          if(config.method=='GET' && config.url.match(/api\//)) {
             var separator = config.url.indexOf('?') === -1 ? '?' : '&';
             config.url = config.url+separator+'noCache=' + new Date().getTime();
           }
