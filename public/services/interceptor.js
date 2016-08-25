@@ -42,10 +42,21 @@ angular.module('mean-factory-interceptor', ['ngCookies'])
 
       };
     }
-  ])
+  ]).factory('noCacheInterceptor', function () {
+      return {
+        request: function (config) {
+          if(config.method=='GET') {
+            var separator = config.url.indexOf('?') === -1 ? '?' : '&';
+            config.url = config.url+separator+'noCache=' + new Date().getTime();
+          }
+          return config;
+        }
+      };
+    });
   //Http Interceptor to check auth failures for XHR requests
   .config(['$httpProvider',
     function($httpProvider) {
       $httpProvider.interceptors.push('httpInterceptor');
+      $httpProvider.interceptors.push('noCacheInterceptor');
     }
   ]);
