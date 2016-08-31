@@ -53,11 +53,51 @@ angular.module('mean-factory-interceptor', ['ngCookies'])
           return config;
         }
       };
-    })
+    }).factory('exceptionHandler', ['$injector', '$log', '$window', function($injector, $log, $window) {
+        return function($delegate) {
+          return function (exception, cause) {
+          // Lazy load to avoid circular dependency
+          var $http = $injector.get('$http');
+
+          try {
+            var errorMessage = exception.toString();
+            StackTrace.fromError(exception).then(function(stackframes) {
+              var stringifiedStack = stackframes.map(function(sf) { 
+                return sf.toString();
+              }).join(' \n');
+
+              $http.post('/api/errors/clientside', 
+              {
+                errorUrl: $window.location.href,
+                errorMessage: errorMessage,
+                stackTrace: stringifiedStack,
+                cause: ( cause || '' )
+              }).then(function(response) {
+              //...
+              }, function(err) {
+              //...
+              });
+            });
+          } catch ( loggingError ) {
+            // for Developers - log the log-failure.
+            $log.warn( "Error logging failed" );
+            $log.log( loggingError );
+          }
+
+          // Pass through to original handler
+          $delegate(exception, cause);
+
+          };
+        };
+      }])
+
   //Http Interceptor to check auth failures for XHR requests
-  .config(['$httpProvider',
-    function($httpProvider) {
+  .config(['$httpProvider', '$provide',
+    function($httpProvider, $provide) {
       $httpProvider.interceptors.push('httpInterceptor');
       $httpProvider.interceptors.push('noCacheInterceptor');
+      $provide.decorator('$exceptionHandler', ['$delegate', 'exceptionHandlerFactory', function ($delegate, exceptionHandlerFactory) {
+        return exceptionHandlerFactory($delegate);
+      }]);
     }
   ]);
