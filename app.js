@@ -5,7 +5,7 @@
  */
 var meanio = require('meanio');
 var Module = meanio.Module,
-  config = meanio.getConfig(),
+  config = meanio.loadConfig(),
   favicon = require('serve-favicon');
 
 var SystemPackage = new Module('system');
