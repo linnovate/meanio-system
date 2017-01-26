@@ -11,8 +11,8 @@
   },  
   "mean": "0.6.x",
   "engines": {
-    "node": "4.x",
-    "npm": "3.x"
+    "node": "7.x",
+    "npm": "4.x"
   },
   "dependencies": {
     "meanio-circles": "^0.1.x",
