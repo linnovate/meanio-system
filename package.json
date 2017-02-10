@@ -8,11 +8,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/linnovate/meanio-system.git"
-  },  
+  },
   "mean": "0.6.x",
   "engines": {
-    "node": "4.x",
-    "npm": "3.x"
+    "node": ">=4.0.0",
+    "npm": ">=3.x"
   },
   "dependencies": {
     "meanio-circles": "^0.1.x",
